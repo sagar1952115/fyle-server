@@ -2,6 +2,9 @@ const express = require("express");
 const router = express.Router();
 const https = require("https");
 
+const dotenv = require("dotenv");
+dotenv.config();
+
 router.get("/github/userinfo/:user/repos", async function (req, res) {
   const user = req.params.user;
   const options = {
@@ -9,8 +12,7 @@ router.get("/github/userinfo/:user/repos", async function (req, res) {
     path: "/users/" + user + "/repos",
 
     headers: {
-      Authorization:
-        "Bearer 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",
+      Authorization: "Bearer" + process.env.TOKEN,
 
       "User-Agent":
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1521.3 Safari/537.36",
@@ -33,7 +35,7 @@ router.get("/github/userinfo/:user", async function (req, res) {
     hostname: "api.github.com",
     path: "/users/" + user,
     headers: {
-      Authorization: "Bearer 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",
+      Authorization: "Bearer" + process.env.TOKEN,
       "User-Agent":
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1521.3 Safari/537.36",
     },
@@ -55,7 +57,7 @@ router.get("/github/repoinfo/:user/:reponame", async function (req, res) {
     hostname: "api.github.com",
     path: "/repos/" + user + "/" + reponame + "/languages",
     headers: {
-      Authorization: "Bearer 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",
+      Authorization: "Bearer" + process.env.TOKEN,
       "User-Agent":
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1521.3 Safari/537.36",
     },
@@ -75,7 +77,7 @@ router.get("/github/rate_limit", async function (req, res) {
     hostname: "api.github.com",
     path: "/rate_limit",
     headers: {
-      Authorization: "Bearer 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",
+      Authorization: "Bearer " + process.env.TOKEN,
       "User-Agent":
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1521.3 Safari/537.36",
     },
