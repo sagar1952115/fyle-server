@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-// const fetch=require('fetch')
 const https = require("https");
 
 router.get("/github/userinfo/:user/repos", async function (req, res) {
@@ -34,8 +33,7 @@ router.get("/github/userinfo/:user", async function (req, res) {
     hostname: "api.github.com",
     path: "/users/" + user,
     headers: {
-      Authorization:
-        "Bearer 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",
+      Authorization: "Bearer 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",
       "User-Agent":
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1521.3 Safari/537.36",
     },
@@ -57,12 +55,9 @@ router.get("/github/repoinfo/:user/:reponame", async function (req, res) {
     hostname: "api.github.com",
     path: "/repos/" + user + "/" + reponame + "/languages",
     headers: {
+      Authorization: "Bearer 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",
       "User-Agent":
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1521.3 Safari/537.36",
-    },
-    Authorization: {
-      Token:
-        "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",
     },
   };
   https
@@ -80,8 +75,7 @@ router.get("/github/rate_limit", async function (req, res) {
     hostname: "api.github.com",
     path: "/rate_limit",
     headers: {
-      Authorization:
-        "Bearer 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",
+      Authorization: "Bearer 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",
       "User-Agent":
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1521.3 Safari/537.36",
     },
