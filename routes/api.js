@@ -17,6 +17,7 @@ router.get("/github/userinfo/:user/repos", async function (req, res) {
       "User-Agent":
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1521.3 Safari/537.36",
     },
+    // OAUth: "Bearer " + process.env.TOKEN,
   };
   https
     .get(options, function (apiResponse) {
@@ -39,6 +40,7 @@ router.get("/github/userinfo/:user", async function (req, res) {
       "User-Agent":
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1521.3 Safari/537.36",
     },
+    // OAUth: "Bearer " + process.env.TOKEN,
   };
   https
     .get(options, function (apiResponse) {
@@ -61,6 +63,7 @@ router.get("/github/repoinfo/:user/:reponame", async function (req, res) {
       "User-Agent":
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1521.3 Safari/537.36",
     },
+    // OAUth: "Bearer " + process.env.TOKEN,
   };
   https
     .get(options, function (apiResponse) {
