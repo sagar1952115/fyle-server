@@ -7,7 +7,6 @@ dotenv.config();
 
 router.get("/github/userinfo/:user/repos", async function (req, res) {
   const user = req.params.user;
-  console.log("this is pat" + process.env.TOKEN_D);
   const options = {
     hostname: "api.github.com",
     path: "/users/" + user + "/repos",
@@ -18,7 +17,6 @@ router.get("/github/userinfo/:user/repos", async function (req, res) {
       "User-Agent":
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1521.3 Safari/537.36",
     },
-    // OAUth: "Bearer " + process.env.TOKEN,
   };
   https
     .get(options, function (apiResponse) {
@@ -31,7 +29,6 @@ router.get("/github/userinfo/:user/repos", async function (req, res) {
 });
 
 router.get("/github/userinfo/:user", async function (req, res) {
-  console.log("this is pat" + process.env.TOKEN_D);
   const user = req.params.user;
   const reponame = req.params.reponame;
   const options = {
@@ -42,7 +39,6 @@ router.get("/github/userinfo/:user", async function (req, res) {
       "User-Agent":
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1521.3 Safari/537.36",
     },
-    // OAUth: "Bearer " + process.env.TOKEN,
   };
   https
     .get(options, function (apiResponse) {
@@ -55,7 +51,6 @@ router.get("/github/userinfo/:user", async function (req, res) {
 });
 
 router.get("/github/repoinfo/:user/:reponame", async function (req, res) {
-  console.log("this is pat" + process.env.TOKEN_D);
   const user = req.params.user;
   const reponame = req.params.reponame;
   const options = {
@@ -66,7 +61,6 @@ router.get("/github/repoinfo/:user/:reponame", async function (req, res) {
       "User-Agent":
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1521.3 Safari/537.36",
     },
-    // OAUth: "Bearer " + process.env.TOKEN,
   };
   https
     .get(options, function (apiResponse) {
@@ -79,7 +73,6 @@ router.get("/github/repoinfo/:user/:reponame", async function (req, res) {
 });
 
 router.get("/github/rate_limit", async function (req, res) {
-  console.log("this is pat" + process.env.TOKEN_D);
   const options = {
     hostname: "api.github.com",
     path: "/rate_limit",
