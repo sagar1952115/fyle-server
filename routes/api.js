@@ -38,8 +38,10 @@ router.get("/github/userinfo/:user", async function (req, res) {
       "User-Agent":
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1521.3 Safari/537.36",
     },
-    OAUth:
-      "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",
+    Authorization: {
+      Token:
+        "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",
+    },
   };
   https
     .get(options, function (apiResponse) {
@@ -61,7 +63,10 @@ router.get("/github/repoinfo/:user/:reponame", async function (req, res) {
       "User-Agent":
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1521.3 Safari/537.36",
     },
-    OAUth: "291581c1e175af78b2795bebd15cc48945a00f6f",
+    Authorization: {
+      Token:
+        "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",
+    },
   };
   https
     .get(options, function (apiResponse) {
