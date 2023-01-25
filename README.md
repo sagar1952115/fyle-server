@@ -20,5 +20,5 @@ npm install
 ```
 npm start
 ```
-You can see Server is Listening in your terminal
-You can visit http://localhost:5000, you will see Server is up and running as response.
+- You can see Server is Listening in your terminal
+- You can visit http://localhost:5000, you will see Server is up and running as response.
